@@ -1,0 +1,48 @@
+<html data-ng-app="myapp">
+<head>
+  <title></title>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/directives/module.js"></script>
+    <script src="app/directives/red_text.js"></script>
+    <script src="app/directives/color_red.js"></script>
+    <script src="app/directives/double_bind.js"></script>
+    <script src="app/directives/only_read_bind.js"></script>
+    <script src="app/directives/custom_click.js"></script>
+    <script src="app/directives/transclude.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap">
+</head>
+<body class="container" ng-controller="demo">
+<h1 color-text="red"> AngularJS Directives!</h1>
+<form>
+  <div>
+  <input type="text" ng-model="name" name="name" placeholder="Name"> {{name}}
+</div>
+<div>
+  <input type="text" ng-model="surname" name="surname" placeholder="surname"> {{surname}}
+</div>
+</form>
+
+<hr>
+<span>Double binded wtih =</span>
+<div double-bind="name"></div>
+
+<span>Only read binded wtih @</span>
+<div data-only-read="{{name}}"></div>
+
+<span>Expresion with &</span>
+<div><button custom-click="alert('hola')">click me!</button></div>
+<hr>
+<div color-red>Atribute!</div>
+<input color-red type="text">
+<color-red>Element!</color-red>
+<div class="color-red">Class!</div>
+
+<hr>
+<div color-text="blue" color-red >What color I am?</div>
+
+<hr>
+<warning>Error: something wrong happened!</warning>
+</body>
+</html>
